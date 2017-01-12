@@ -1,11 +1,11 @@
 $(function() {
 	//Swiper
 	var galleryTop = new Swiper('.gallery-top', {
-		nextButton: '.swiper-button-next',
-		prevButton: '.swiper-button-prev',
+		
 		spaceBetween: 10,
 		loop: true,
-		loopedSlides: 5 //looped slides should be the same  
+		loopedSlides: 5,
+		 //looped slides should be the same  
 
 	});
 	var galleryThumbs = new Swiper('.gallery-thumbs', {
@@ -13,10 +13,13 @@ $(function() {
 		prevButton: '.swiper-button-prev2',
 		spaceBetween: 10,
 		slidesPerView: 6,
-		touchRatio: 0.2,
 		loop: true,
-		loopedSlides: 5, //looped slides should be the same
-		slideToClickedSlide: true
+		touchRatio: 0.6,
+		
+		 //looped slides should be the same
+		slideToClickedSlide: true,
+		// loopedSlides: 5,
+		
 	});
 	galleryTop.params.control = galleryThumbs;
 	galleryThumbs.params.control = galleryTop;
@@ -26,9 +29,8 @@ $(function() {
 		prevButton: '.swiper-button-prev3',
 		spaceBetween: 10,
 		loop: true,
-		loopedSlides: 5, //looped slides should be the same     
-		slidesPerView: 5,
-		
+		 //looped slides should be the same     
+		slidesPerView: 3,
 		centeredSlides: true,
 		slideToClickedSlide: true
 			// onTouchMove: function(swiper){
@@ -42,10 +44,10 @@ $(function() {
 	var swiper4 = new Swiper('.swiper4', {
 		spaceBetween: 2,
 		loop: true,
-		slidesPerView: 5,
-		slidesPerGroup: 5, //每次滑动多少个为一组
-		slidesPerColumn: 2,
-		slidesPerColumnFill: 'row'
+		// slidesPerView: 5,
+		// slidesPerGroup: 5, //每次滑动多少个为一组
+		// slidesPerColumn: 2,
+		// slidesPerColumnFill: 'row'
 	});
 	var swiper5 = new Swiper('.swiper5', {
 		slidesPerView: 4,
@@ -56,7 +58,7 @@ $(function() {
 	});
 	var swiper6 = new Swiper('.swiper6', {
 		slidesPerView: 4,
-		spaceBetween: 15,
+		spaceBetween: 20,
 		loop: true,
 
 
@@ -93,18 +95,20 @@ $(function() {
 	});
 
 	//控制横屏箭头
-	$('.half-view.float-l').mouseover(function() {
+	$('.half-view.float-l,.fp-controlArrow.fp-prev').mouseover(function() {
+		$('.fp-controlArrow.fp-next').fadeOut();
 		$('.fp-controlArrow.fp-prev').fadeIn();
 	})
-	$('.half-view.float-l').mouseout(function() {
+	// $('.half-view.float-l').mouseout(function() {
+	// 	$('.fp-controlArrow.fp-prev').fadeOut();
+	// })
+	$('.half-view.float-r,.fp-controlArrow.fp-next').mouseover(function() {
 		$('.fp-controlArrow.fp-prev').fadeOut();
-	})
-	$('.half-view.float-r').mouseover(function() {
 		$('.fp-controlArrow.fp-next').fadeIn();
 	})
-	$('.half-view.float-r').mouseout(function() {
-		$('.fp-controlArrow.fp-next').fadeOut();
-	})
+	// $('.half-view.float-r').mouseout(function() {
+	// 	$('.fp-controlArrow.fp-next').fadeOut();
+	// })
 	$('.fp-controlArrow.fp-prev').mouseover(function(e) {
 		e.stopPropagation();
 	})
