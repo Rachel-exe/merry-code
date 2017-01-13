@@ -5,8 +5,6 @@ $(function() {
 		spaceBetween: 10,
 		loop: true,
 		loopedSlides: 5,
-		 //looped slides should be the same  
-
 	});
 	var galleryThumbs = new Swiper('.gallery-thumbs', {
 		nextButton: '.swiper-button-next2',
@@ -15,10 +13,7 @@ $(function() {
 		slidesPerView: 6,
 		loop: true,
 		touchRatio: 0.6,
-		
-		 //looped slides should be the same
 		slideToClickedSlide: true,
-		// loopedSlides: 5,
 		
 	});
 	galleryTop.params.control = galleryThumbs;
@@ -30,16 +25,9 @@ $(function() {
 		spaceBetween: 10,
 		loop: true,
 		 //looped slides should be the same     
-		slidesPerView: 3,
+		slidesPerView: 4,
 		centeredSlides: true,
 		slideToClickedSlide: true
-			// onTouchMove: function(swiper){
-			//     //hover图片时
-			//     $('.swiper3 .swiper-slide-active').animate({
-			//     	width:'290px',
-			//     	height:'440px'
-			//     })
-			//   }
 	});
 	var swiper4 = new Swiper('.swiper4', {
 		spaceBetween: 2,
@@ -75,6 +63,8 @@ $(function() {
 	$('#fullpage').fullpage({
 		'navigation': true,
 		navigationColor: 'red',
+		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6','page7','page8'],
+		menu: '#menu',
 		afterLoad: function(anchorLink, index) {
 			h1='.section' + index + ' .title .fir-block h1';
 			h3='.section' + index + ' .title .fir-block h3';
@@ -85,11 +75,11 @@ $(function() {
 			arr=[];
 			arr.push(h1,h3,small,more,moreIntro,smLine);
 			name=arr.join(',');
-            // console.log(name);
 			$(name).addClass('current');
+			// console.log('a');
 		},
 		onLeave:function(index){
-			console.log(name);
+			// console.log(name);
 			$(name).removeClass('current');
 		}
 	});
@@ -99,16 +89,11 @@ $(function() {
 		$('.fp-controlArrow.fp-next').fadeOut();
 		$('.fp-controlArrow.fp-prev').fadeIn();
 	})
-	// $('.half-view.float-l').mouseout(function() {
-	// 	$('.fp-controlArrow.fp-prev').fadeOut();
-	// })
+	
 	$('.half-view.float-r,.fp-controlArrow.fp-next').mouseover(function() {
 		$('.fp-controlArrow.fp-prev').fadeOut();
 		$('.fp-controlArrow.fp-next').fadeIn();
 	})
-	// $('.half-view.float-r').mouseout(function() {
-	// 	$('.fp-controlArrow.fp-next').fadeOut();
-	// })
 	$('.fp-controlArrow.fp-prev').mouseover(function(e) {
 		e.stopPropagation();
 	})
@@ -142,9 +127,15 @@ $(function() {
 		$('.swiper5 .swiper-slide .name:eq('+idx+')').css('transform','translateY(40px)');
 
 	})
-	// $('.swiper5 .swiper-slide .name').mouseover(function(){
-	// 	console.log($(this).index());
+	//解决ie不兼容hover
+	var s1Name='.gallery-top .swiper-slide-active img,.swiper4 .swiper-slide img,.swiper6 .swiper-slide img';
+	$(s1Name).mouseover(function(){
+		$(this).css('transform','scale(1.1,1.1)');
+	})
+	$(s1Name).mouseout(function(){
+		$(this).css('transform','scale(1,1)');
+	})
 
-	// })
-
+    //AJAX
+    // $ajax.
 })

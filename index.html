@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="Resource-type" content="Document" />
+    <meta http-equiv=x-ua-compatible content=ie=edge>
+    <meta name="renderer" content="webkit">
     <title>婚庆首页</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" href="css/jquery.fullPage.css">
@@ -11,6 +14,16 @@
 </head>
 
 <body>
+<!--[if IE 9]>
+<script>
+alert('升级IE10及以上版本将获得更好的浏览体验')
+</script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script>
+alert('请使用新版浏览器浏览！')
+</script>
+<![endif]-->
     <div class="container clearfix">
         <header class="clearfix">
             <div class="header-top clearfix">
@@ -30,36 +43,36 @@
                     <div class="head-QRcode" id="head-QRcode-weChat"><img src="img/QRcode.png" alt="手机二维码"></div>
                 </div>
             </div>
-            <div class="header-nav">
+            <div class="header-nav clearfix">
                 <div class="header-inner">
                     <img class="float-l logo" src="img/logo.png">
                     <div class="search float-r">
                         <input type="text" name="" placeholder="请输入关键字搜索"><span class="btn-search">搜索</span>
                     </div>
-                    <nav class="main-nav">
-                        <ul nowrap>
-                            <a href="#">
+                    <nav class="main-nav clearfix">
+                        <ul nowrap id="menu">
+                            <a href="#page1">
                                 <li>官方首页</li>
                             </a>
-                            <a href="#">
+                            <a href="#page2">
                                 <li>找商家</li>
                             </a>
-                            <a href="#">
+                            <a href="#page3">
                                 <li>潮流新尚</li>
                             </a>
-                            <a href="#">
+                            <a href="#page4">
                                 <li>婚嫁百科</li>
                             </a>
-                            <a href="#">
+                            <a href="#page5">
                                 <li>新娘专区</li>
                             </a>
-                            <a href="#">
+                            <a href="#page6">
                                 <li>明星婚礼</li>
                             </a>
-                            <a href="#">
+                            <a href="#page7">
                                 <li>婚礼现场</li>
                             </a>
-                            <a href="#">
+                            <a href="#page8">
                                 <li>结婚保障</li>
                             </a>
                         </ul>
@@ -68,7 +81,7 @@
             </div>
         </header>
         <div id="fullpage">
-            <section class="section section1">
+            <section class="section section1" data-menuanchor="page1">
                 <div class="slide">
                     <a href="#" class="half-view float-l"></a>
                     <a href="#" class="half-view float-r"></a>
@@ -83,7 +96,7 @@
                     </a>
                 </div>
             </section>
-            <section class="section section2">
+            <section class="section section2" data-menuanchor="page2">
                 <article class="title">
                     <div class="fir-block">
                         <h1>商家地区</h1>
@@ -155,7 +168,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section clearfix section3">
+            <section class="section clearfix section3" data-menuanchor="page3">
                 <article class="title">
                     <div class="fir-block">
                         <h1>潮流婚尚</h1>
@@ -170,7 +183,7 @@
                     <div class="sm-line"></div>
                 </article>
                 <div class="btn-outer3">
-                    Add Arrows
+                    <!-- Add Arrows -->
                     <div class="swiper-button-prev swiper-button-prev3"></div>
                     <div class="swiper-button-next swiper-button-next3"></div>
                     <div class="swiper-container swiper3">
@@ -204,7 +217,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section section4 clearfix">
+            <section class="section section4 clearfix" data-menuanchor="page4">
                 <article class="title">
                     <div class="fir-block">
                         <h1>婚嫁百科</h1>
@@ -353,7 +366,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section section5 clearfix">
+            <section class="section section5 clearfix" data-menuanchor="page5">
                 <article class="title">
                     <div class="fir-block">
                         <h1>新娘专区</h1>
@@ -392,7 +405,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section section6 clearfix">
+            <section class="section section6 clearfix" data-menuanchor="page6">
                 <article class="title">
                     <div class="fir-block">
                         <h1>明星婚礼</h1>
@@ -446,7 +459,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section section7 clearfix">
+            <section class="section section7 clearfix" data-menuanchor="page7">
                 <article class="title">
                     <div class="fir-block">
                         <h1>婚礼现场</h1>
@@ -481,7 +494,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section section8 clearfix">
+            <section class="section section8 clearfix" data-menuanchor="page8">
                 <article class="title">
                     <div class="fir-block">
                         <h1>CONTACT</h1>
@@ -534,7 +547,7 @@
                     <div class="sec8-links">
                         <h4 class="sec8-h4">新手上路</h4>
                         <ul class="sec8-ul">
-                            <li class="sec8-li"><span>如何注册</span></li>
+                            <li class="sec8-li">如何注册</li>
                             <li class="sec8-li"><span>如何登陆</span></li>
                             <li class="sec8-li"><span>如何预订酒店</span></li>
                         </ul>
