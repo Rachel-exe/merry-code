@@ -140,5 +140,5 @@ $(function() {
 	})
 
     //AJAX
-    // $ajax.get
+    // $ajax.getasdfasdf
 })
