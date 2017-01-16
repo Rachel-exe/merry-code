@@ -72,8 +72,10 @@ $(function() {
 			more='.section' + index + ' .title .more';
 			moreIntro='.section' + index + ' .title .more-intro';
 			smLine='.section' + index + ' .title .sm-line';
+			connect='.section' + index +' .block-connect>div';
+			links='.section' + index +' .block-links';
 			arr=[];
-			arr.push(h1,h3,small,more,moreIntro,smLine);
+			arr.push(h1,h3,small,more,moreIntro,smLine,connect,links);
 			name=arr.join(',');
 			$(name).addClass('current');
 			// console.log('a');
@@ -128,7 +130,8 @@ $(function() {
 
 	})
 	//解决ie不兼容hover
-	var s1Name='.gallery-top .swiper-slide-active img,.swiper4 .swiper-slide img,.swiper6 .swiper-slide img';
+	var s1Name='.gallery-top .swiper-slide img,.swiper4 .swiper-slide img,.swiper6 .swiper-slide img';
+	$('.swiper-container img').css('transition','all .6s');
 	$(s1Name).mouseover(function(){
 		$(this).css('transform','scale(1.1,1.1)');
 	})
@@ -137,5 +140,5 @@ $(function() {
 	})
 
     //AJAX
-    // $ajax.
+    // $ajax.get
 })
